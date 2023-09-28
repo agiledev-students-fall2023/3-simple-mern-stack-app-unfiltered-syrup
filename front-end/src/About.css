@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+.aboutPageContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 5vh;
+}
+
+h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 45px;
+}
+
+h2{
+    font-family: 'Ubuntu', sans-serif;
+    width: 50%;
+    text-align: left;
+}
+
+.description{
+    padding: 20px;
+    padding-top: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 50%;
+    text-align: left;
+    font-size: 25px;
+    word-break: break-word;
+}
+
+.imageContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin-top: 5vh;
+}
+
+.personalImage{
+    width: 324px;
+    height: 453px;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 0lvh 0vh 10px 0px black;
+}
+
+.link{
+    margin-top: 20px;
+}
+
+.link:hover {
+    color: #457DFB;
+    text-decoration: none;
+  }
+  
+.link:hover::after {
+    border-color: #457DFB;
+    right: 0;
+}

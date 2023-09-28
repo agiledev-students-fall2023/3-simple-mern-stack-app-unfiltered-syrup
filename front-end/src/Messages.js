@@ -27,7 +27,7 @@ const Messages = props => {
       .then(response => {
         // axios bundles up all response data in response.data property
         const messages = response.data.messages
-        setMessages(messages)
+        //setMessages(messages)
       })
       .catch(err => {
         const errMsg = JSON.stringify(err, null, 2) // convert error object to a string so we can simply dump it to the screen

@@ -21,6 +21,19 @@ mongoose
 // load the dataabase models we want to deal with
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
+const { Text } = require('./models/Text')
+const { Urls } = require('./models/Urls')
+
+async function addDescription(){
+  Text.create({ content: ' Hello! My name is Jaden Wang, a senior at New York University majoring in data science and computer science. I enjoy web development and have some experience with React, Flask, and WebGL. I also have a cat named George who attends lectures with me.' })
+}
+
+async function addUrl(){
+  Urls.create({ content: 'static-assets/image.jpg'})
+  Urls.create({ content: 'static-assets/image2.jpg'})
+}
+
+
 
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
@@ -76,6 +89,27 @@ app.post('/messages/save', async (req, res) => {
       status: 'failed to save the message to the database',
     })
   }
+})
+
+app.get('/texts/get_text', async (req, res) => {
+  // load description data
+  console.log('here');
+  const texts = await Text.find({})
+  console.log('sadfsfs')
+  console.log(texts);
+  res.json({
+    content: texts,
+    status: 'all good',
+  })
+})
+
+app.get('/images/get_image', async (req, res) => {
+  // load image data
+  const urls = await Urls.find({})
+  res.json({
+    url: urls,
+    status: 'all good',
+  })
 })
 
 // export the express app we created to make it available to other modules
